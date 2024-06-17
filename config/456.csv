@@ -1,0 +1,32 @@
+IP地址	端口	TLS	数据中心	地区	城市	网络延迟	下载速度
+54.249.173.119	443	TRUE	NRT	Asia Pacific	Tokyo	101 ms	1081 kB/s
+131.186.28.236	443	TRUE	NRT	Asia Pacific	Tokyo	101 ms	0 kB/s
+47.242.232.14	2087	TRUE	HKG	Asia Pacific	Hong Kong	101 ms	4597 kB/s
+149.129.8.215	443	TRUE	SJC	North America	San Jose	101 ms	15 kB/s
+132.145.93.198	2083	TRUE	NRT	Asia Pacific	Tokyo	102 ms	54 kB/s
+13.250.131.37	443	TRUE	SIN	Asia Pacific	Singapore	105 ms	11579 kB/s
+54.179.184.9	443	TRUE	SIN	Asia Pacific	Singapore	106 ms	15910 kB/s
+52.74.101.26	443	TRUE	SIN	Asia Pacific	Singapore	110 ms	637 kB/s
+47.242.232.14	2053	TRUE	HKG	Asia Pacific	Hong Kong	118 ms	3914 kB/s
+18.167.20.205	443	TRUE	HKG	Asia Pacific	Hong Kong	128 ms	11764 kB/s
+18.167.194.154	443	TRUE	HKG	Asia Pacific	Hong Kong	134 ms	2933 kB/s
+18.167.208.181	443	TRUE	HKG	Asia Pacific	Hong Kong	147 ms	7274 kB/s
+146.56.102.163	443	TRUE	ICN	Asia Pacific	Seoul	152 ms	0 kB/s
+99.83.209.185	443	TRUE	IAD	North America	Ashburn	169 ms	605 kB/s
+65.75.193.21	37813	TRUE	SJC	North America	San Jose	169 ms	8228 kB/s
+47.76.159.146	8443	TRUE	HKG	Asia Pacific	Hong Kong	54 ms	12245 kB/s
+47.243.203.119	8443	TRUE	HKG	Asia Pacific	Hong Kong	54 ms	4290 kB/s
+47.242.155.183	2083	TRUE	HKG	Asia Pacific	Hong Kong	54 ms	3944 kB/s
+47.243.203.119	2087	TRUE	HKG	Asia Pacific	Hong Kong	54 ms	3664 kB/s
+47.243.86.79	2087	TRUE	HKG	Asia Pacific	Hong Kong	54 ms	153 kB/s
+8.218.53.110	2087	TRUE	HKG	Asia Pacific	Hong Kong	55 ms	10222 kB/s
+47.76.77.103	2096	TRUE	HKG	Asia Pacific	Hong Kong	55 ms	659 kB/s
+47.242.155.183	8443	TRUE	HKG	Asia Pacific	Hong Kong	56 ms	4322 kB/s
+8.217.85.14	2053	TRUE	HKG	Asia Pacific	Hong Kong	57 ms	13308 kB/s
+47.76.159.146	2087	TRUE	HKG	Asia Pacific	Hong Kong	57 ms	11703 kB/s
+47.243.107.148	2053	TRUE	HKG	Asia Pacific	Hong Kong	57 ms	7479 kB/s
+47.242.202.230	8443	TRUE	HKG	Asia Pacific	Hong Kong	57 ms	6816 kB/s
+47.242.202.230	2096	TRUE	HKG	Asia Pacific	Hong Kong	57 ms	4531 kB/s
+8.210.3.24	2087	TRUE	HKG	Asia Pacific	Hong Kong	57 ms	4181 kB/s
+8.210.48.107	8443	TRUE	HKG	Asia Pacific	Hong Kong	57 ms	4034 kB/s
+							
