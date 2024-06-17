@@ -1,7 +1,7 @@
-IP地址	端口	TLS	数据中心	地区	城市	网络延迟	下载速度(M/s)
+IP鍦板潃	绔彛	TLS	鏁版嵁涓績	鍦板尯	鍩庡競	缃戠粶寤惰繜	涓嬭浇閫熷害(M/s)
 54.150.91.84	443	TRUE	NRT	Asia Pacific	Tokyo	73 ms	14.307
 15.165.49.161	8080	TRUE	ICN	Asia Pacific	Seoul	96 ms	12.095
 3.120.144.20	8080	TRUE	FRA	Europe	Frankfurt	179 ms	8.293
 13.250.131.37	443	TRUE	SIN	Asia Pacific	Singapore	103 ms	8.193
 18.167.194.154	443	TRUE	HKG	Asia Pacific	Hong Kong	137 ms	8.097
-52.9.112.189	443	TRUE	SJC	North America	San Jose	172 ms	7788
+52.9.112.189	443	TRUE	SJC	North America	San Jose	172 ms	7.788
