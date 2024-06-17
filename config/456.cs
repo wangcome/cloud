@@ -1,4 +1,4 @@
-IP地址	端口	TLS	数据中心	地区	城市	网络延迟	下载速度
+IP鍦板潃	绔彛	TLS	鏁版嵁涓績	鍦板尯	鍩庡競	缃戠粶寤惰繜	涓嬭浇閫熷害
 54.150.91.84	443	TRUE	NRT	Asia Pacific	Tokyo	73 ms	14307 kB/s
 15.165.49.161	8080	TRUE	ICN	Asia Pacific	Seoul	96 ms	12095 kB/s
 3.120.144.20	8080	TRUE	FRA	Europe	Frankfurt	179 ms	8293 kB/s
