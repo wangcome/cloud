@@ -175,6 +175,7 @@ jobs:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.md
         files: ${{ env.FIRMWARE }}/*.bin  # 明确上传bin文件
+        tag: AutoUpdate
         draft: false
         prerelease: false
 
