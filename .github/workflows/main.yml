@@ -123,18 +123,19 @@ jobs:
     - name: Organize files
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
-      run: |
-        cd openwrt/bin/targets/*/*
-        rm -rf packages
-        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-         echo "::set-output name=status::success"
+       run: |
+         cd openwrt/bin/targets/*/* || exit 1
+         FIRMWARE_PATH=$(realpath .)
+         rm -rf packages
+         echo "FIRMWARE=$FIRMWARE_PATH" >> $GITHUB_ENV
+         echo "status=success" >> $GITHUB_OUTPUT
 
-    - name: Upload firmware directory
-      uses: actions/upload-artifact@main
-      if: steps.organize.outputs.status == 'success' && !cancelled()
-      with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: ${{ env.FIRMWARE }}
+  - name: Upload firmware directory
+    uses: actions/upload-artifact@v4
+     if: steps.organize.outputs.status == 'success' && !cancelled()
+     with:
+    name: OpenWrt_firmware_${{ env.DEVICE_NAME }}_${{ env.FILE_DATE }}
+    path: ${{ env.FIRMWARE }}
 
     - name: Upload firmware to cowtransfer
       id: cowtransfer
