@@ -113,6 +113,10 @@ jobs:
       if: (!cancelled())
       run: df -hT
 
+   - name: Check space usage
+      if: (!cancelled())
+      run: df -hT
+
     - name: Upload bin directory
       uses: actions/upload-artifact@main
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
@@ -122,9 +126,9 @@ jobs:
 
     - name: Organize files
       id: organize
-      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()&& steps.compile.outputs.status == 'success'
+      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
-        cd openwrt/bin/targets/*/*|| exit 1
+        cd openwrt/bin/targets/*/*
         rm -rf packages
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "name=status::success" >> $GITHUB_OUTPUT
@@ -156,14 +160,12 @@ jobs:
 
     - name: Generate release tag
       id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()&& steps.organize.outputs.status == 'success'
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
         echo "name=release_tag::$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
-        RELEASE_TAG=$(date +"v%Y.%m.%d-%H%M")
-        echo "release_tag=${RELEASE_TAG}" >> $GITHUB_OUTPUT
-        echo "## Build Information" > release.md
-        [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> >> release.md
-        [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> >> release.md
+        touch release.txt
+        [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
+        [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
         echo "name=status::success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware to release
@@ -173,11 +175,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
-        body_path: release.md
-        files: ${{ env.FIRMWARE }}/*.bin  # 明确上传bin文件
-        tag: AutoUpdate
-        draft: false
-        prerelease: false
+        body_path: release.txt
+        files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
