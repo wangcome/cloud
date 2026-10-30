@@ -159,7 +159,7 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
         # 定义您专属的固定前缀（例如：My-OpenWrt-）
-        PREFIX="Newifi D2"
+        PREFIX="lede"
         
         # 拼接后的动态标签形式如：My-OpenWrt-x86_64-2026.10.30-2031
         echo "release_tag=${PREFIX}${{ env.DEVICE_NAME }}-$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_OUTPUT
