@@ -124,11 +124,11 @@ jobs:
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
-        cd openwrt/bin/targets/*/*
         mkdir -p $GITHUB_WORKSPACE/firmware_release
-        cp -f *rootfs.tar.gz $GITHUB_WORKSPACE/firmware_release/ 2>/dev/null || true
-        cp -f *.img $GITHUB_WORKSPACE/firmware_release/ 2>/dev/null || true
-        cp -f *.img.xz $GITHUB_WORKSPACE/firmware_release/ 2>/dev/null || true
+        find openwrt/bin/ -type f -name "*.bin" -exec cp -f {} $GITHUB_WORKSPACE/firmware_release/ \; 2>/dev/null || true
+        find openwrt/bin/ -type f -name "*rootfs.tar.gz" -exec cp -f {} $GITHUB_WORKSPACE/firmware_release/ \; 2>/dev/null || true
+        find openwrt/bin/ -type f -name "*.img" -exec cp -f {} $GITHUB_WORKSPACE/firmware_release/ \; 2>/dev/null || true
+        find openwrt/bin/ -type f -name "*.img.xz" -exec cp -f {} $GITHUB_WORKSPACE/firmware_release/ \; 2>/dev/null || true
         echo "FIRMWARE=$GITHUB_WORKSPACE/firmware_release" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
